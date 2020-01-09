@@ -181,7 +181,6 @@ module PUnCDatapath(
 		if (rst) begin
 			pc <= 16'd0;
 			ir <= 16'd0;
-			condCode <= `COND_RESET;
 		end
 
 		// Fetch stage
