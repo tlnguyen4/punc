@@ -1,0 +1,23 @@
+LD R0, #18
+LD R1, #18
+LD R2, #18
+ADD R0, R0, #0
+BRnz #8
+ADD R3, R1, R2
+ADD R1, R2, #0
+ADD R2, R3, #0
+JSR #6
+ADD R3, R3, #0
+BRnz #-6
+ADD R0, R0, #-1
+BRzp #-8
+ST R2, #8
+HALT
+NOT R3, R3 
+NOT R3, R3
+AND R3, R3, #1 
+RET
+0005
+0001
+0001
+0000

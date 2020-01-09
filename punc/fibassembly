@@ -1,0 +1,39 @@
+########################################
+// R0 - n 
+// R1 - a 
+// R2 - b 
+// R3 - c 
+// R4 - address of checkOddfuntion
+
+0  LD R0, #19
+1  LD R1, #19
+2  LD R2, #19
+3  ADD R0, R0, #0
+4  BRnz #9
+
+// N_GREATER_THAN_0
+5  ADD R3, R1, R2
+6  ADD R1, R2, #0
+7  ADD R2, R3, #0
+8  LD R4, #7
+9  JSRR R4
+10 ADD R3, R3, #-1
+11 BRnp #-9 
+12 ADD R0, R0, #-1
+13 BRp # -9
+
+// N_LESS_THAN_EQUAL_0
+14 ST R2, #8
+15 HALT
+
+// Check odd function
+16 NOT R3, R3 
+17 NOT R3, R3
+18 AND R3, R3, #1 
+19 RET
+
+// DATA
+20 0005 // n 
+21 0001 // a 
+22 0001 // b 
+23 0000 // fib 
